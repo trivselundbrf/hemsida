@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AlfaBeta – Digitala Enkäter för BRF</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      margin: 0;
+      background: #f7f9fb;
+      color: #333;
+    }
+    header {
+      background: #234e70;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      font-size: 1.1rem;
+    }
+    nav {
+      background: #1e3d58;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #234e70;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    form {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.2rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.2rem;
+      background: #234e70;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    footer {
+      background: #1e3d58;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AlfaBeta</h1>
+    <p>Digitala enkäter för bostadsrättsföreningar – enkelt, prisvärt och professionellt</p>
+  </header>
+
+  <nav>
+    <a href="#tjanster">Tjänster</a>
+    <a href="#sa-funkar-det">Så funkar det</a>
+    <a href="#bestall">Beställ</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <section id="tjanster">
+    <h2>Våra Tjänster</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Trivselmätningar</h3>
+        <p>Skapa indextal och följ upp stämningen i föreningen över tid.</p>
+      </div>
+      <div class="card">
+        <h3>Attitydundersökningar</h3>
+        <p>Ta reda på vad medlemmarna tycker om styrelsen, kommunikation och förvaltning.</p>
+      </div>
+      <div class="card">
+        <h3>Informationshämtning</h3>
+        <p>Samla in intressen, förslag och svar inför viktiga beslut eller projekt.</p>
+      </div>
+      <div class="card">
+        <h3>Behovskartläggningar</h3>
+        <p>Kartlägg vad medlemmarna vill inför t.ex. renovering eller nya tjänster.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sa-funkar-det">
+    <h2>Så fungerar det</h2>
+    <ol>
+      <li>Ni skickar en excelfil med namn, e-post, lägenhetsnummer och adress.</li>
+      <li>Vi skickar ut enkäten till samtliga medlemmar digitalt.</li>
+      <li>Vi sammanställer svaren, analyserar och skickar en rapport med grafik och indextal.</li>
+    </ol>
+  </section>
+
+  <section id="bestall">
+    <h2>Beställ en enkät</h2>
+    <form>
+      <label for="brf">Namn på BRF:</label>
+      <input type="text" id="brf" name="brf" required />
+
+      <label for="kontaktperson">Kontaktperson:</label>
+      <input type="text" id="kontaktperson" name="kontaktperson" required />
+
+      <label for="email">E-post:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="tel">Telefonnummer:</label>
+      <input type="tel" id="tel" name="tel" />
+
+      <label for="typ">Typ av undersökning:</label>
+      <select id="typ" name="typ">
+        <option value="trivsel">Trivselmätning</option>
+        <option value="attityd">Attitydundersökning</option>
+        <option value="information">Informationshämtning</option>
+        <option value="behov">Behovskartläggning</option>
+      </select>
+
+      <label for="fil">Bifoga excelfil:</label>
+      <input type="file" id="fil" name="fil" />
+
+      <label for="meddelande">Övrig kommentar:</label>
+      <textarea id="meddelande" name="meddelande" rows="4"></textarea>
+
+      <button type="submit">Skicka beställning</button>
+    </form>
+  </section>
+
+  <section id="kontakt">
+  <h2>Kontakt</h2>
+  <p>Har du frågor? Hör gärna av dig till oss:</p>
+  <p>
+    E-post: 
+    <a href="mailto:trivselundbrf@gmail.com">trivselundbrf@gmail.com</a>
+  </p>
+
+  <form action="https://formsubmit.co/trivselundbrf@gmail.com" method="POST">
+    <!-- Dölj Formsubmit-bekräftelser (valfritt) -->
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Vart ska användaren skickas efter skickat formulär? -->
+    <input type="hidden" name="_next" value="https://dindomän.se/tack.html">
+
+    <label for="namn">Namn:</label><br>
+    <input type="text" id="namn" name="namn" required><br><br>
+
+    <label for="epost">E-post:</label><br>
+    <input type="email" id="epost" name="email" required><br><br>
+
+    <label for="meddelande">Meddelande:</label><br>
+    <textarea id="meddelande" name="message" rows="5" required></textarea><br><br>
+
+    <button type="submit">Skicka</button>
+  </form>
+</section>
+
+
+  <footer>
+    &copy; 2025 AlfaBeta AB – Enkäter för BRF:er
+  </footer>
+
+</body>
+</html>
+
